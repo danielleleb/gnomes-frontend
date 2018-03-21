@@ -1,0 +1,19 @@
+.gnome-img {
+    width: 95%;
+}
+.gnome-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0;
+}
+.gnome-card {
+    padding-bottom: 20%;
+}
+.professions-list li {
+    border: 1px solid grey;
+    border-radius: 8%;
+    padding: 1%;
+    background-color: rgba(214, 214, 214, 0.446);
+}

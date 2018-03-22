@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
 // PAGES
 import { AppComponent } from './app.component';
@@ -19,6 +19,13 @@ import { AuthService } from './services/auth.service';
 import { InitAuthGuardService } from './guards/init-auth-guard.service';
 import { RequireUserGuardService } from './guards/require-user-guard.service';
 
+const routes: Routes = [
+  { path: '',  component: LandingPageComponent
+  , canActivate: [ InitAuthGuardService ]
+ },
+    { path: '**', redirectTo: '' }
+];
+
 
 @NgModule({
   declarations: [
@@ -32,7 +39,7 @@ import { RequireUserGuardService } from './guards/require-user-guard.service';
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule
+    RouterModule.forRoot(routes)
   ],
   providers: [
     AuthService,

@@ -1,0 +1,23 @@
+.gnome-list img{
+    max-width: 8em;
+    max-height: 95%;
+}
+.gnome-list {
+    list-style: none;
+    padding: 0;
+}
+.gnome-list li {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    height: 8em;
+    width: 100%;
+    margin-bottom: 2%;
+    border: 1px solid grey;
+}
+
+.gnome-info {
+    border: 1px solid red;
+    align-self: flex-start;
+    padding-left: 2%;
+}

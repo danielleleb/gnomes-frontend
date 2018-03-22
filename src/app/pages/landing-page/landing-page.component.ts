@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GnomesService } from '../../services/gnomes.service';
+
 
 @Component({
   selector: 'app-landing-page',
@@ -6,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./landing-page.component.css']
 })
 export class LandingPageComponent implements OnInit {
+  gnomes: any;
 
-  constructor() { }
+  constructor(private gnomesService: GnomesService) { }
 
   ngOnInit() {
+    this.gnomesService.getAllGnomes()
+      .then(result => {
+        this.gnomes = Object.values(result);
+        this.gnomes = this.gnomes[0];
+        console.log(Object.values(result));
+        console.log(this.gnomes);
+      });
   }
 
 }

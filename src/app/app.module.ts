@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+
 
 // PAGES
 import { AppComponent } from './app.component';
@@ -18,10 +20,11 @@ import { RequireAnonGuardService } from './guards/require-anon-guard.service';
 import { AuthService } from './services/auth.service';
 import { InitAuthGuardService } from './guards/init-auth-guard.service';
 import { RequireUserGuardService } from './guards/require-user-guard.service';
+import { GnomesService } from './services/gnomes.service';
 
 const routes: Routes = [
   { path: '',  component: LandingPageComponent
-  , canActivate: [ InitAuthGuardService ]
+  // , canActivate: [ InitAuthGuardService ]
  },
     { path: '**', redirectTo: '' }
 ];
@@ -39,13 +42,15 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot(routes)
   ],
   providers: [
     AuthService,
     InitAuthGuardService,
     RequireAnonGuardService,
-    RequireUserGuardService
+    RequireUserGuardService,
+    GnomesService
   ],
   bootstrap: [AppComponent]
 })

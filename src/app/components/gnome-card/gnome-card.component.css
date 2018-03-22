@@ -2,18 +2,53 @@
     width: 95%;
 }
 .gnome-card ul {
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 0;
+   
 }
 .gnome-card {
     padding-bottom: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+.professions-list,
+.friends-list {
+    list-style: none;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-content: center;
+    padding: 0;
+    margin: 0;
+}
+
 .professions-list li {
+   border: 1px solid grey;
+    border-radius: 8%;
+    background-color: rgba(214, 214, 214, 0.446);
+    margin: .4em;
+    padding: .4em;
+}
+
+.friends-list li{
+    min-width: 170px;
+    margin: .4em;
     border: 1px solid grey;
     border-radius: 8%;
+    padding: .4em;
+}
+.physical-info-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.physical-info-container div{
+    border: 1px solid gray;
+    border-radius: 8%;
     padding: 1%;
-    background-color: rgba(214, 214, 214, 0.446);
+    width: 42%;
+    margin: 2%;
+    text-align: center;
 }

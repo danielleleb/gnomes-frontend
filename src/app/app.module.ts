@@ -8,6 +8,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { RequireAnonGuardComponent } from './guards/require-anon-guard/require-anon-guard.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { SignupComponent } from './components/signup/signup.component';
     HomePageComponent,
     LandingPageComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    RequireAnonGuardComponent
   ],
   imports: [
     BrowserModule

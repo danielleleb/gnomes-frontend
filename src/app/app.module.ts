@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { GnomeCardComponent } from './components/gnome-card/gnome-card.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
-import { NgComponent } from './ng/ng.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -15,7 +15,7 @@ import { NgComponent } from './ng/ng.component';
     GnomeCardComponent,
     HomePageComponent,
     LandingPageComponent,
-    NgComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule

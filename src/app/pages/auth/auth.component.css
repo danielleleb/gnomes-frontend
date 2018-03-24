@@ -1,0 +1,12 @@
+a:hover {
+    border-bottom: 1px dotted gray;
+    cursor: pointer;
+}
+
+a {
+    border-bottom: 2px solid gray;
+}
+
+div {
+    text-align: center;
+}

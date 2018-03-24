@@ -10,4 +10,31 @@ html {
 body {
     margin: 0;
     height: 0;
+    font-family: 'Raleway', sans-serif;
   }
+
+.modal-open {
+  overflow: hidden;
+  position: fixed;
+}
+
+input {
+  border: 1px solid grey;
+  border-radius: 8px;
+  text-align: center;
+  width: 40%;
+  padding: 1%;
+  margin: 1%;
+}
+
+button {
+  padding: 1%;
+  border-radius: 8px;
+  font-family: 'Raleway', sans-serif;
+  color: rgb(0, 0, 0);
+  background-color: transparent;
+}
+
+button:hover {
+  background-color:rgb(118, 118, 118);
+}

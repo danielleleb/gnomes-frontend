@@ -1,1 +1,14 @@
-<router-outlet></router-outlet>
+<div class="app-container">
+    <header>
+        <nav>
+            <img src="./assets/images/gnome.png" alt="gnome image" (click)="landingPage()">
+            <div *ngIf="!user">
+                <button (click)="login()">Login</button>
+            </div>
+            <div *ngIf="user">
+                <button (click)="logout()">Logout</button>
+            </div>
+        </nav>
+    </header>
+    <router-outlet></router-outlet>
+</div>

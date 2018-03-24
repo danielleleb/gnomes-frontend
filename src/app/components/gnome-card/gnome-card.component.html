@@ -1,44 +1,47 @@
 <div class="gnome-card container">
-  <h3>DANIELLE LEBLANC-CYR</h3>
+  <h3>{{gnome.name}}</h3>
 
-  <img class="gnome-img" src="../../assets/images/sleepysheng.jpeg" alt="gnome-image">
+  <img class="gnome-img" src="{{ gnome.thumbnail }}" alt="gnome-image">
 
   <div class="physical-info-container">
     <div>
       <p class="gnome-info-label">age:</p>
-      <p>23</p>
+      <p>{{ gnome.age }}</p>
     </div>
 
     <div>
       <p class="gnome-info-label">weight:</p>
-      <p>135</p>
+      <p>{{ gnome.weight }}</p>
     </div>
     
     <div>
       <p class="gnome-info-label">height:</p>
-      <p>170</p>
+      <p>{{ gnome.height }}</p>
     </div>
 
     <div>
       <p class="gnome-info-label">hair-color:</p>
-      <p>brown</p>
+      <p>gnome.hair_color</p>
     </div>
-  <!-- do hair-color using sass maybe with text-outline for visibility!! -->
   </div>
 
-  <p class="gnome-info-label">professions:</p>
-  <ul class="professions-list">
-    <li>singer</li>
-    <li>dancer</li>
-    <li>actor</li>
-    <li>president</li>
-  </ul>
-  <!-- use a tag-like display for each profession and maybe thumbnails for friends?-->
-  <p class="gnome-info-label">friends:</p>
-  <ul class="friends-list">
-    <li>Whitwright Gimbaltorqu</li>
-    <li>Sarabink Nozzlebooster</li>
-    <li>Milli Switchrocket</li>
-    <li>Milli Mystratchet</li>
-  </ul>
+  <div *ngIf="!user">
+    <p>You must <a [routerLink]="['/auth']">login</a> to view this gnome's friends and professions.</p>
+  </div>
+
+  <div *ngIf="user">
+    <p class="gnome-info-label">professions:</p>
+    <ul class="professions-list" *ngFor="let profession of gnome.professions">
+      <li>
+      <p>{{profession}}</p>
+      </li>
+    </ul>
+    
+    <p class="gnome-info-label">friends:</p>
+    <ul class="friends-list" *ngFor="let friend of gnome.friends">
+      <li>
+        <p>{{friend}}</p>
+      </li>
+    </ul>
+  </div>  
 </div>

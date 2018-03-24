@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
+import { AuthComponent } from './pages/auth/auth.component';
 
 // COMPONENTS
 import { GnomeCardComponent } from './components/gnome-card/gnome-card.component';
@@ -22,9 +23,15 @@ import { InitAuthGuardService } from './guards/init-auth-guard.service';
 import { RequireUserGuardService } from './guards/require-user-guard.service';
 import { GnomesService } from './services/gnomes.service';
 
+// PIPES
+import { SearchPipe } from './pipes/search.pipe';
+
 const routes: Routes = [
   { path: '',  component: LandingPageComponent
   // , canActivate: [ InitAuthGuardService ]
+ },
+  { path: 'auth',  component: AuthComponent
+ , canActivate: [ RequireAnonGuardService ]
  },
     { path: '**', redirectTo: '' }
 ];
@@ -37,7 +44,9 @@ const routes: Routes = [
     HomePageComponent,
     LandingPageComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    SearchPipe,
+    AuthComponent
   ],
   imports: [
     BrowserModule,

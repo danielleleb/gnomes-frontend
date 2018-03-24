@@ -1,0 +1,9 @@
+<div *ngIf="loginForm">
+  <app-login [feedbackEnabled]="feedbackEnabled" [error]="error" [processing]="processing" (submitForm)="handleLoginForm($event)"></app-login>
+  <p>Don't have an account yet? <a (click)="toggleAuthForms()">Signup</a>.</p>
+</div>
+
+<div *ngIf="signupForm">
+  <app-signup [feedbackEnabled]="feedbackEnabled" [error]="error" [processing]="processing" (submitForm)="handleSubmitForm($event)"></app-signup>
+  <p>Already have an account? <a (click)="toggleAuthForms()">Log in</a>.</p>
+</div>

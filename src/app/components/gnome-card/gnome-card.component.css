@@ -1,27 +1,34 @@
 .gnome-img {
+    margin-left: auto;
+    margin-right: auto;
     width: 95%;
+    border-radius: 8px;
 }
-.gnome-card ul {
-   
-}
+
 .gnome-card {
     padding-bottom: 20%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .professions-list,
 .friends-list {
     list-style: none;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-    align-content: center;
+    /* align-content: center; */
     padding: 0;
     margin: 0;
 }
 
-.professions-list li {
+.gnome-card li {
+    display: flex;
+    flex-direction: row;
+}
+
+.professions-list p {
    border: 1px solid grey;
     border-radius: 8%;
     background-color: rgba(214, 214, 214, 0.446);
@@ -29,12 +36,13 @@
     padding: .4em;
 }
 
-.friends-list li{
+.friends-list p{
     min-width: 170px;
     margin: .4em;
     border: 1px solid grey;
     border-radius: 8%;
     padding: .4em;
+    background-color: rgba(214, 214, 214, 0.446);
 }
 .physical-info-container{
     display: flex;
@@ -51,4 +59,6 @@
     width: 42%;
     margin: 2%;
     text-align: center;
+    background-color: rgba(214, 214, 214, 0.446);
+
 }

@@ -1,10 +1,18 @@
 .gnome-list img{
+    padding-left: 1%;
     max-width: 8em;
     max-height: 95%;
+    border-radius: 2%;
 }
 .gnome-list {
     list-style: none;
     padding: 0;
+}
+
+.gnome-list-container {
+    height: 300;
+    overflow: hidden;
+    width: 90%;
 }
 .gnome-list li {
     display: flex;
@@ -14,10 +22,71 @@
     width: 100%;
     margin-bottom: 2%;
     border: 1px solid grey;
+    border-radius: 2%;
 }
 
 .gnome-info {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     align-self: flex-start;
     padding-left: 2%;
+}
+
+.alert{
+    width: 100%;
+    z-index: 10;
+    background-color: rgba(28, 27, 27, 0.631);
+    position: fixed; /* Stay in place */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    left:0;
+    top: 0;
+}
+
+.alert-content{
+    width: 88%;
+    height: 95%;
+    background: #43C6AC; 
+    background: -webkit-linear-gradient(to bottom, #F8FFAE, #43C6AC);  
+    background: linear-gradient(to bottom, #F8FFAE, #43C6AC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    text-align: center;
+    overflow: auto;
+}
+.exit-btn{
+    width: 20%;
+    margin-left: 90%;
+    margin-top: 0;
+    color: rgb(213, 213, 213);
+    font-weight: bolder;
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+}
+.exit-btn:hover{
+    cursor: pointer;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#container h3 {
+    color: grey;
+    font-weight: 300;
+}
+
+#container input {
+    width: 50%;
+}
+
+h4:hover {
+    cursor: pointer;
 }

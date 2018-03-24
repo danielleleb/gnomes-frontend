@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GnomesService } from '../../services/gnomes.service';
+import { SearchPipe } from '../../pipes/search.pipe';
 
 
 @Component({
@@ -9,10 +10,14 @@ import { GnomesService } from '../../services/gnomes.service';
 })
 export class LandingPageComponent implements OnInit {
   gnomes: any;
+  displayProfile: boolean;
+  gnome: any;
 
   constructor(private gnomesService: GnomesService) { }
 
   ngOnInit() {
+    this.displayProfile = false;
+
     this.gnomesService.getAllGnomes()
       .then(result => {
         this.gnomes = Object.values(result);
@@ -20,6 +25,19 @@ export class LandingPageComponent implements OnInit {
         console.log(Object.values(result));
         console.log(this.gnomes);
       });
+  }
+
+  toggleDisplayProfile(gnome) {
+    if (!document.getElementsByClassName('modal-open')) {
+      this.gnome = gnome;
+      this.displayProfile = !this.displayProfile;
+      document.getElementById('container').classList.add('modal-open');
+    } else if (document.getElementsByClassName('modal-open')) {
+      this.gnome = gnome;
+      this.displayProfile = !this.displayProfile;
+      document.getElementById('container').classList.remove('modal-open');
+    }
+
   }
 
 }

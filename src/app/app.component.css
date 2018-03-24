@@ -1,0 +1,33 @@
+nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid grey;
+}
+
+nav img {
+    height: 10vh;
+    margin: 1%;
+}
+
+.app-container {
+    background: rgba(67, 198, 172, 0.59);
+    min-height: 100vh;
+}
+
+nav div button{
+    /* margin-right: 2%; */
+    min-height: 100%;
+    width: 100%;
+    /* max-width: 110px; */
+    padding: 8%;
+    font-size: 18px;
+    /* font-weight: 700; */
+}
+
+nav div {
+    margin-right: 2%;
+    max-width: 110px;
+    width: 15%;
+}

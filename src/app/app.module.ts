@@ -7,7 +7,6 @@ import { FormsModule } from '@angular/forms';
 
 // PAGES
 import { AppComponent } from './app.component';
-import { HomePageComponent } from './pages/home-page/home-page.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { AuthComponent } from './pages/auth/auth.component';
 
@@ -28,7 +27,6 @@ import { SearchPipe } from './pipes/search.pipe';
 
 const routes: Routes = [
   { path: '',  component: LandingPageComponent
-  // , canActivate: [ InitAuthGuardService ]
  },
   { path: 'auth',  component: AuthComponent
  , canActivate: [ RequireAnonGuardService ]
@@ -41,7 +39,6 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     GnomeCardComponent,
-    HomePageComponent,
     LandingPageComponent,
     LoginComponent,
     SignupComponent,

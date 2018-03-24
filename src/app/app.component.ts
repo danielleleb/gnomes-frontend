@@ -29,11 +29,10 @@ export class AppComponent implements OnInit {
 
   login() {
     this.router.navigate(['/auth']);
-    // window.location.reload();
   }
 
   landingPage() {
-    this.router.navigate(['/']);
+    this.router.navigate(['']);
     window.location.reload();
 
   }

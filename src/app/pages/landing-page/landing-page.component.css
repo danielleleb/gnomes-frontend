@@ -26,9 +26,13 @@
 }
 
 .gnome-info {
-    /* border: 1px solid red; */
     align-self: flex-start;
     padding-left: 2%;
+    
+}
+
+.gnome-info p {
+    text-align: left;
 }
 
 .alert{
@@ -81,10 +85,6 @@
 #container h3 {
     color: grey;
     font-weight: 300;
-}
-
-#container input {
-    width: 50%;
 }
 
 h4:hover {

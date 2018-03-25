@@ -2,7 +2,7 @@
     <header>
         <nav>
             <img src="./assets/images/gnome.png" alt="gnome image" (click)="landingPage()">
-            <div *ngIf="!user">
+            <div *ngIf="anon">
                 <button (click)="login()">Login</button>
             </div>
             <div *ngIf="user">

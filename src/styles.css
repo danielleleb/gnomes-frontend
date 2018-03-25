@@ -18,7 +18,7 @@ body {
   position: fixed;
 }
 
-input {
+.input {
   border: 1px solid grey;
   border-radius: 8px;
   text-align: center;

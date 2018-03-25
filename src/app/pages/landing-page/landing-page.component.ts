@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { GnomesService } from '../../services/gnomes.service';
-// import { SearchPipe } from '../../pipes/search.pipe';
-
 
 @Component({
   selector: 'app-landing-page',
@@ -9,7 +7,9 @@ import { GnomesService } from '../../services/gnomes.service';
   styleUrls: ['./landing-page.component.css']
 })
 export class LandingPageComponent implements OnInit {
-  gnomes: any;
+  private gnomes: any;
+  private gnomesOrdered: any;
+  gnomesShowing: any;
   displayProfile: boolean;
   gnome: any;
 
@@ -20,11 +20,17 @@ export class LandingPageComponent implements OnInit {
 
     this.gnomesService.getAllGnomes()
       .then(result => {
-        this.gnomes = Object.values(result);
-        this.gnomes = this.gnomes[0];
-        console.log(Object.values(result));
-        console.log(this.gnomes);
+        const gnomesArray = Object.values(result);
+        this.gnomes = new Array(...gnomesArray[0]);
+        this.gnomesShowing = this.gnomes;
       });
+    }
+
+  private sortArray(array) {
+    this.gnomesOrdered = new Array(...array);
+    this.gnomesOrdered.sort((a: any, b: any) => {
+      return b.age - a.age;
+    });
   }
 
   toggleDisplayProfile(gnome) {
@@ -38,6 +44,19 @@ export class LandingPageComponent implements OnInit {
       document.getElementById('container').classList.remove('modal-open');
     }
 
+  }
+
+  handleCheckboxClick(input) {
+    if (input.checked) {
+
+      if (!this.gnomesOrdered) {
+        this.sortArray(this.gnomes);
+      }
+
+      this.gnomesShowing = this.gnomesOrdered;
+    } else {
+      this.gnomesShowing = this.gnomes;
+    }
   }
 
 }

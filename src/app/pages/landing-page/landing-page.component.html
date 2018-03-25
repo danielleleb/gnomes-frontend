@@ -1,8 +1,13 @@
 <div id="container">
   <h1>Welcome to Brastlewark</h1>
   <h3>Meet the gnomes...</h3>
-  <input type="text" id="gnome_name" [(ngModel)]="pattern" placeholder="Search gnomes by name">
-  <input type="checkbox" [(ngModel)]="order">
+  <input class="input" type="text" id="gnome_name" [(ngModel)]="pattern" placeholder="Search gnomes by name">
+
+  <div>
+    <label for="checkboxInput">Display gnomes from oldest to youngest:</label>
+    <input type="checkbox" [(ngModel)]="order" #checkboxInput (click)="handleCheckboxClick(checkboxInput)">
+  </div>
+
   <div class="alert" *ngIf="displayProfile">
     <div class="alert-content">
         <p class="exit-btn" (click)="toggleDisplayProfile()">X</p>
@@ -11,12 +16,14 @@
   </div>
 
   <div class="gnome-list-container">
-    <p *ngIf="!gnomes">Please be patient while we find the gnomes...</p>
-    <ul *ngIf="gnomes" class="gnome-list">
-      <li *ngFor="let gnome of gnomes| search:'name':pattern; let i = index ">
+    <p *ngIf="!gnomesShowing">Please be patient while we find the gnomes...</p>
+    <ul *ngIf="gnomesShowing" class="gnome-list">
+      <li *ngFor="let gnome of gnomesShowing| search:'name':pattern; let i = index ">
         <img src="{{  gnome.thumbnail  }}" (click)="toggleDisplayProfile(gnome)">
-        <h4 class="gnome-info" (click)="toggleDisplayProfile(gnome)">{{  gnome.name  }}</h4>
-        <p>{{ gnome.age }}</p>
+        <div class="gnome-info" >
+          <h4 (click)="toggleDisplayProfile(gnome)">{{  gnome.name  }}</h4>
+          <p>Age: {{ gnome.age }}</p>
+        </div>
       </li>
     </ul>
   </div>

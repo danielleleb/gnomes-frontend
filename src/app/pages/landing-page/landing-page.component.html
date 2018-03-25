@@ -2,7 +2,7 @@
   <h1>Welcome to Brastlewark</h1>
   <h3>Meet the gnomes...</h3>
   <input type="text" id="gnome_name" [(ngModel)]="pattern" placeholder="Search gnomes by name">
-
+  <input type="checkbox" [(ngModel)]="order">
   <div class="alert" *ngIf="displayProfile">
     <div class="alert-content">
         <p class="exit-btn" (click)="toggleDisplayProfile()">X</p>
@@ -13,7 +13,7 @@
   <div class="gnome-list-container">
     <p *ngIf="!gnomes">Please be patient while we find the gnomes...</p>
     <ul *ngIf="gnomes" class="gnome-list">
-      <li *ngFor="let gnome of gnomes| search:'name':pattern; let i = index">
+      <li *ngFor="let gnome of gnomes| search:'name':pattern; let i = index ">
         <img src="{{  gnome.thumbnail  }}" (click)="toggleDisplayProfile(gnome)">
         <h4 class="gnome-info" (click)="toggleDisplayProfile(gnome)">{{  gnome.name  }}</h4>
         <p>{{ gnome.age }}</p>

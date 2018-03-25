@@ -48,8 +48,8 @@
     width: 88%;
     height: 95%;
     background: #43C6AC; 
-    background: -webkit-linear-gradient(to bottom, #F8FFAE, #43C6AC);  
-    background: linear-gradient(to bottom, #F8FFAE, #43C6AC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: -webkit-linear-gradient(to top, #F8FFAE, #43C6AC);  
+    background: linear-gradient(to top, #F8FFAE, #43C6AC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     border-radius: 5px;
     display: flex;
     align-items: center;

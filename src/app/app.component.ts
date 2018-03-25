@@ -34,14 +34,12 @@ export class AppComponent implements OnInit {
   landingPage() {
     this.router.navigate(['']);
     window.location.reload();
-
   }
 
   logout() {
     this.authService.logout()
       .then(() => this.router.navigate(['']));
       window.location.reload();
-
   }
 
 }

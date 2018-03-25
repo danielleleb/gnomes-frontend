@@ -1,3 +1,6 @@
+# Instructions
+This code can be run using "npm start" (localhost:3000) for the backend folder (https://github.com/danielleleb/gnomes-backend), and "ng serve" for the frontend on localhost:4200.
+
 # Description
 This app displays all the information of all gnomes. All users are able to view the names and profile pictures of all of the gnomes, but only logged in users can view friends and professions.
 

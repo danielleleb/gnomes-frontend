@@ -33,7 +33,7 @@ export class AppComponent implements OnInit {
 
   landingPage() {
     this.router.navigate(['']);
-    window.location.reload();
+    // window.location.reload();
   }
 
   logout() {

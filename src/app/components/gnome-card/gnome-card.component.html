@@ -20,8 +20,8 @@
     </div>
 
     <div>
-      <p class="gnome-info-label">hair-color:</p>
-      <p>gnome.hair_color</p>
+      <p class="gnome-info-label">hair color:</p>
+      <p>{{ gnome.hair_color }}</p>
     </div>
   </div>
 
@@ -31,6 +31,9 @@
 
   <div *ngIf="user">
     <p class="gnome-info-label">professions:</p>
+    <div *ngIf="gnome.professions?.length == 0">
+      <p>This gnome is unemployed.</p>
+    </div>
     <ul class="professions-list" *ngFor="let profession of gnome.professions">
       <li>
       <p>{{profession}}</p>
@@ -38,6 +41,9 @@
     </ul>
     
     <p class="gnome-info-label">friends:</p>
+    <div *ngIf="gnome.friends?.length == 0">
+      <p>This gnome is friendless :(</p>
+    </div>
     <ul class="friends-list" *ngFor="let friend of gnome.friends">
       <li>
         <p>{{friend}}</p>

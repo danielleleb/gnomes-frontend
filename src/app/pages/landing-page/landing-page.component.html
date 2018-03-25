@@ -16,6 +16,7 @@
       <li *ngFor="let gnome of gnomes| search:'name':pattern; let i = index">
         <img src="{{  gnome.thumbnail  }}" (click)="toggleDisplayProfile(gnome)">
         <h4 class="gnome-info" (click)="toggleDisplayProfile(gnome)">{{  gnome.name  }}</h4>
+        <p>{{ gnome.age }}</p>
       </li>
     </ul>
   </div>

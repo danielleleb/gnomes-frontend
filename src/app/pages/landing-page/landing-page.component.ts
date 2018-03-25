@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GnomesService } from '../../services/gnomes.service';
-import { SearchPipe } from '../../pipes/search.pipe';
+// import { SearchPipe } from '../../pipes/search.pipe';
 
 
 @Component({

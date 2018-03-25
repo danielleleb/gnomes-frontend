@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
@@ -24,6 +24,7 @@ import { GnomesService } from './services/gnomes.service';
 
 // PIPES
 import { SearchPipe } from './pipes/search.pipe';
+import { OrderByPipe } from './pipes/order-by.pipe';
 
 const routes: Routes = [
   { path: '',  component: LandingPageComponent
@@ -43,7 +44,8 @@ const routes: Routes = [
     LoginComponent,
     SignupComponent,
     SearchPipe,
-    AuthComponent
+    AuthComponent,
+    OrderByPipe
   ],
   imports: [
     BrowserModule,

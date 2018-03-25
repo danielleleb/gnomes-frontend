@@ -58,4 +58,5 @@ export class AuthComponent implements OnInit {
       this.feedbackEnabled = false;
     });
 
+  }
 }

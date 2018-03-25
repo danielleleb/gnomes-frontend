@@ -28,6 +28,7 @@ import { OrderByPipe } from './pipes/order-by.pipe';
 
 const routes: Routes = [
   { path: '',  component: LandingPageComponent
+  , canActivate: [ InitAuthGuardService ]
  },
   { path: 'auth',  component: AuthComponent
  , canActivate: [ RequireAnonGuardService ]
